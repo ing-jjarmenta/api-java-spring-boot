@@ -7,6 +7,10 @@ public class CreateAccountRequest {
     @NotNull(message = "customerId is required")
     private Long customerId;
 
+    public CreateAccountRequest(Long customerId) {
+        this.customerId = customerId;
+    }
+
     public Long getCustomerId() {
         return customerId;
     }
