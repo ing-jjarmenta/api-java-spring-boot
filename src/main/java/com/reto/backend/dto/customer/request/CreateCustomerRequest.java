@@ -20,6 +20,13 @@ public class CreateCustomerRequest {
     @Email(message = "Email must be valid")
     private String email;
 
+    public CreateCustomerRequest(DocumentType documentType, String documentNumber, String fullName, String email) {
+        this.documentType = documentType;
+        this.documentNumber = documentNumber;
+        this.fullName = fullName;
+        this.email = email;
+    }
+
     public DocumentType getDocumentType() {
         return documentType;
     }

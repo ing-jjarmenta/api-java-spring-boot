@@ -75,6 +75,7 @@ public class AccountServiceTest {
 
     @Test
     void shouldThrowExceptionWhenCustomerAlreadyHasAccount() {
+
         CreateAccountRequest request = new CreateAccountRequest(1L);        
 
         when(customerRepository.findById(1L)).thenReturn(Optional.of(customer));
@@ -89,6 +90,7 @@ public class AccountServiceTest {
 
     @Test
     void shouldGetAccountByCustomerId() {
+
         Account account = new Account("ACC123", AccountStatus.ACTIVE, customer);
 
         when(customerRepository.findById(1L)).thenReturn(Optional.of(customer));
@@ -102,6 +104,7 @@ public class AccountServiceTest {
 
     @Test
     void shouldThrowExceptionWhenAccountNotFoundForCustomer() {
+        
         when(customerRepository.findById(1L)).thenReturn(Optional.of(customer));
         when(accountRepository.findByCustomer(customer)).thenReturn(Optional.empty());
 
