@@ -1,9 +1,5 @@
 package com.reto.backend.service;
 
-import java.util.UUID;
-
-import org.springframework.stereotype.Service;
-
 import com.reto.backend.dto.account.request.CreateAccountRequest;
 import com.reto.backend.dto.account.response.AccountResponse;
 import com.reto.backend.exception.BusinessException;
@@ -13,6 +9,8 @@ import com.reto.backend.model.AccountStatus;
 import com.reto.backend.model.Customer;
 import com.reto.backend.repository.AccountRepository;
 import com.reto.backend.repository.CustomerRepository;
+import java.util.UUID;
+import org.springframework.stereotype.Service;
 
 @Service
 public class AccountService {
