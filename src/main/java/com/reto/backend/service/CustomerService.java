@@ -2,6 +2,7 @@ package com.reto.backend.service;
 
 import com.reto.backend.dto.customer.request.CreateCustomerRequest;
 import com.reto.backend.dto.customer.response.CustomerResponse;
+import com.reto.backend.exception.BusinessException;
 import com.reto.backend.model.Customer;
 import com.reto.backend.repository.CustomerRepository;
 import java.util.List;
@@ -19,10 +20,10 @@ public class CustomerService {
     public CustomerResponse createCustomer(CreateCustomerRequest request) {
         
         if (customerRepository.existsByDocumentNumber(request.getDocumentNumber())) {
-            throw new IllegalArgumentException("Document number already exists");
+            throw new BusinessException("Document number already exists");
         }
         if (customerRepository.existsByEmail(request.getEmail())) {
-            throw new IllegalArgumentException("Email already exists");
+            throw new BusinessException("Email already exists");
         }
         
         Customer customer = new Customer(
